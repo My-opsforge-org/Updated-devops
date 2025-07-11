@@ -22,9 +22,13 @@ output "vm_admin_username" {
   value = azurerm_linux_virtual_machine.flask_vm.admin_username
 }
 
+# Outputs the fully qualified domain name (FQDN) of the PostgreSQL server
+
 output "postgresql_server_fqdn" {
   value = azurerm_postgresql_flexible_server.db.fqdn
 }
+
+# Outputs the database connection URL (sensitive info hidden in CLI)
 
 output "database_url" {
   value = "postgresql://${var.postgres_admin}:${var.postgres_password}@${azurerm_postgresql_flexible_server.db.fqdn}:5432/${var.database_name}"
