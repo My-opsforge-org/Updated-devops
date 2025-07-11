@@ -16,6 +16,8 @@ output "http_vm_public_ip" {
   value = azurerm_public_ip.http_vm_public_ip.ip_address
 }
 
+# Outputs the admin username for the Linux virtual machine
+
 output "vm_admin_username" {
   value = azurerm_linux_virtual_machine.flask_vm.admin_username
 }
