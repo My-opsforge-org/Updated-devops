@@ -8,7 +8,11 @@ resource "azurerm_resource_group" "rg" {
   location = "Canada Central"
 }
 
-resource "azurerm_postgresql_flexible_server" "db" {
+# PostgreSQL Flexible Server configuration
+# This block provisions a PostgreSQL server with flexible configuration,
+# administrator credentials, version, SKU, and storage settings.
+resource "azurerm_postgresql_flexible_server" "db"
+ {
   name                   = "gotrip-postgres"
   resource_group_name    = azurerm_resource_group.rg.name
   location               = azurerm_resource_group.rg.location
